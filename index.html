@@ -2,102 +2,108 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Monthly Income Expense Program</title>
+    <link rel="stylesheet" href="style.css">
+
+  <title>Monthly Income Expense Program</title>
 </head>
 
 <body>
-    <header class="mt-2 mb-3 text-warning text-center display-5">
-        Monthly Income Expense Program
-    </header>
+  <header class="mt-2 mb-3 text-warning text-center display-5 fs-0">
+    Monthly Income Expense Program
+  </header>
 
-    <main class="container" style="max-width: 800px">
-        <form action="" class="d-flex mt-2 gap-2">
-            <input class="form-control" type="number" min="0" name="" id="income-input" autofocus
-                placeholder="Enter the your income... Example 100 etc ..." required />
-            <button class="btn btn-warning" id="add-buton" type="submit">
-                Add
-            </button>
-        </form>
+  <main class="container" style="max-width: 800px">
+    <form id="add-button-form" class="d-flex mt-2 gap-2">
+      <input class="form-control" type="number" min="0" name="" id="income-input" autofocus
+        placeholder="Enter the your income... Example 100 etc ..." required />
+      <button class="btn btn-warning" id="add-button" type="submit">
+        Add
+      </button>
+    </form>
 
-        <form class="row g-3 mt-2 border rounded-4 p-3" id="spending-form">
-            <h4 class="text-center">Spending Form</h4>
-            <div class="col-6">
-                <label for="spending-area" class="form-label">Spending Area</label>
-                <input type="text" class="form-control" id="spending-area" placeholder="Electric, water etc..."
-                    required />
-            </div>
-            <div class="col-6">
-                <label for="date" class="form-label">Date</label>
-                <input type="date" class="form-control" id="date" />
-            </div>
-            <div class="col-12">
-                <label for="amount" class="form-label">Spending Amount</label>
-                <input type="number" class="form-control" id="amount" placeholder="1000 etc..." required />
-            </div>
-            <div class="col-12 text-center">
-                <button type="submit" class="btn btn-warning" id="save">Save</button>
-            </div>
+    <form class="row g-3 mt-2 border rounded-4 p-3" id="spending-form">
 
-            <table class="table table-bordered table-hover table-striped mt-4 text-center" id="spending-table">
-                <thead>
-                    <tr>
-                        <th scope="col" class="w-25">Date</th>
-                        <th scope="col" class="w-50">Spending Area</th>
-                        <th scope="col">Amount</th>
-                        <th scope="col">Process</th>
-                    </tr>
-                </thead>
-                <tbody id="spending-body">
-                    <!-- <tr>
+      <h4 class="text-center">Spending Form</h4>
+
+      <div class="col-6">
+        <label for="spending-area" class="form-label">Spending Area</label>
+        <input type="text" class="form-control" id="spending-area" placeholder="Electric, water etc..." required
+          value="deneme" />
+      </div>
+
+      <div class="col-6">
+        <label for="spending-date" class="form-label">Date</label>
+        <input type="date" class="form-control" id="spending-date" />
+      </div>
+      <div class="col-12">
+        <label for="spending-amount" class="form-label">Spending Amount</label>
+        <input type="number" class="form-control" id="spending-amount" placeholder="1000 etc..." required />
+      </div>
+
+      <div class="col-12 text-center">
+        <button type="submit" class="btn btn-warning" id="spending-button">
+          Save
+        </button>
+      </div>
+    </form>
+
+    <table class="table table-bordered table-hover table-striped mt-4 text-center" id="spending-table">
+      <thead>
+        <tr>
+          <th scope="col" class="w-25">Date</th>
+          <th scope="col" class="w-50">Spending Area</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Process</th>
+        </tr>
+      </thead>
+      <tbody id="spending-body">
+        <!-- <tr>
                   <th scope="row">1</th>
                   <td>Mark</td>
                   <td>Otto</td>
                   <td>@mdo</td>
                 </tr> -->
-                </tbody>
-            </table>
-            <table class="table table-bordered table-hover table-striped mt-4 text-center w-50 ms-auto"
-                id="result-table">
-                <tbody class="text-end">
-                    <tr>
-                        <th>Your Income</th>
-                        <td id="income">0</td>
-                    </tr>
-                    <tr>
-                        <th>Your Expense</th>
-                        <td id="expense">0</td>
-                    </tr>
-                    <tr>
-                        <th>Remainder</th>
-                        <td id="remainder">0</td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
+      </tbody>
+    </table>
 
-        <section class="text-center mt-2">
-            <button class="btn btn-warning">Reset Form</button>
-        </section>
-    </main>
+    <table class="table table-bordered table-hover table-striped mt-4 text-center w-50 ms-auto" id="result-table">
+      <tbody class="text-end">
+        <tr>
+          <th>Your Income</th>
+          <td id="income">0</td>
+        </tr>
+        <tr>
+          <th>Your Expense</th>
+          <td id="expense">0</td>
+        </tr>
+        <tr>
+          <th>Remainder</th>
+          <td id="remainder">0</td>
+        </tr>
+      </tbody>
+    </table>
 
-    <footer>
-        Designed By DGKN © 2024
-    </footer>
+    <section class="text-center mt-2">
+      <button class="btn btn-warning" id="reset-btn">Reset Form</button>
+    </section>
+  </main>
 
-    <script src="app.js"></script>
+  <footer class="footer">Designed By DGKN © 2024</footer>
+
+  <script src="app.js"></script>
 </body>
 
 </html>
